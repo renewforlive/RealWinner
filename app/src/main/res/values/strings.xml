@@ -1,0 +1,137 @@
+<resources>
+    <string name="app_name">RealWinner</string>
+    <string name="navigation_home">首頁</string>
+    <string name="navigation_record">紀錄</string>
+    <string name="navigation_event">活動</string>
+    <string name="navigation_setting">設定</string>
+
+    <!--HomeFragment-->
+    <string name="home_title">我的朋友</string>
+
+    <!--RecordFragment-->
+    <string name="record_title">活動紀錄</string>
+    <string name="record_add_title">新增紀錄</string>
+    <string name="item_record_title">活動標題</string>
+    <string name="item_record_time">活動時間</string>
+    <string name="item_record_content">活動內容</string>
+    <string name="item_record_time_content">%1$s-%2$s-%3$s</string>
+
+    <!--RecordDetailActivity-->
+    <string name="record_detail_title">活動紀錄內容</string>
+    <string name="record_detail_image">活動圖片</string>
+    <string name="record_detail_name">活動標題</string>
+    <string name="record_detail_time">活動時間</string>
+    <string name="record_detail_content">活動內容</string>
+    <string name="record_detail_edit">修改</string>
+    <string name="record_detail_delete">刪除</string>
+    <string name="record_detail_insert">新增</string>
+    <string name="record_detail_content_text_hint">請填寫活動內容~~</string>
+    <string name="record_detail_name_hint">新增</string>
+    <string name="record_detail_time_hint">選擇時間</string>
+    <string name="record_detail_validate_post">需要上傳圖片或影片</string>
+    <string name="record_detail_validate_title">活動標題未填</string>
+    <string name="record_detail_validate_time">活動時間未選</string>
+    <string name="record_detail_validate_content">活動內容未填</string>
+    <string name="record_detail_save_success">新增成功</string>
+    <string name="record_detail_delete_success">刪除成功</string>
+
+    <!--FriendDetailActivity-->
+    <string name="friend_detail_title">朋友詳細內容</string>
+    <string name="friend_detail_id_error">朋友ID錯誤</string>
+    <string name="friend_detail_name">名字: %1$s</string>
+    <string name="friend_detail_nickname">暱稱: %1$s</string>
+    <string name="friend_detail_birthday">生日: %1$s</string>
+    <string name="friend_detail_height">身高: %1$s</string>
+    <string name="friend_detail_personality">個性: %1$s</string>
+    <string name="friend_detail_blood">血型: %1$s</string>
+    <string name="friend_detail_cellphone">手機: %1$s</string>
+    <string name="friend_detail_hobby">興趣: %1$s</string>
+    <string name="friend_detail_line">LINE ID: %1$s</string>
+    <string name="friend_detail_facebook">FACEBOOK ID: %1$s</string>
+    <string name="friend_detail_ig">IG ID: %1$s</string>
+    <string name="friend_detail_other">其他: %1$s</string>
+
+    <!--EventFragment-->
+    <string name="event_title">活動提醒</string>
+    <string name="event_single_title">活動標題</string>
+    <string name="event_single_content">活動內容</string>
+    <string name="event_single_notification">活動通知</string>
+    <string name="event_add_title">新增活動</string>
+
+    <!--EventAddDialog-->
+    <string name="event_add_dialog_title">新增活動</string>
+    <string name="event_add_dialog_name">活動標題</string>
+    <string name="event_add_dialog_content">活動內容</string>
+    <string name="event_add_dialog_notification">是否通知</string>
+    <string name="event_add_dialog_start_time">活動時間</string>
+    <string name="event_add_dialog_start_time_hint">請選擇</string>
+    <string name="event_add_validate_title_error">活動標題未填</string>
+    <string name="event_add_validate_content_error">活動內容未填</string>
+    <string name="event_add_validate_start_time_error">活動時間未填</string>
+    <string name="event_add_save_success">新增成功</string>
+
+    <!--SettingFragment-->
+    <string name="setting_title">設定</string>
+    <string name="setting_version_title">版本號</string>
+    <string name="setting_theme_title">更換主題</string>
+    <string name="setting_adv_title">取消廣告</string>
+    <string name="setting_notification_title">關閉提醒</string>
+    <string name="setting_version_name_display">版本號: %1$s</string>
+    <string name="setting_theme_change">主題更換</string>
+    <string name="setting_adv_purchase_already">已經購買過此項商品</string>
+    <string name="setting_adv_purchase_success">成功取消廣告</string>
+    <string name="setting_no_feature">此功能還未啟動</string>
+
+    <!--AddFragment-->
+    <string name="add_friend_title">新增朋友</string>
+    <string name="add_full_name_title">名字*</string>
+    <string name="add_full_name_hint">請輸入名字</string>
+    <string name="add_nick_name_title">暱稱</string>
+    <string name="add_nick_name_hint">請輸入暱稱</string>
+    <string name="add_birth_title">生日</string>
+    <string name="add_birth_hint">請選擇</string>
+    <string name="add_blood_title">血型</string>
+    <string name="add_height_title">身高</string>
+    <string name="add_body_weight_title">體重</string>
+    <string name="add_constellation_title">星座</string>
+    <string name="add_cellphone_title">手機</string>
+    <string name="add_cellphone_hint">請輸入手機</string>
+    <string name="add_personality_title">個性</string>
+    <string name="add_personality_hint">請輸入個性</string>
+    <string name="add_hobby_title">興趣</string>
+    <string name="add_hobby_hint">請輸入興趣</string>
+    <string name="add_line_title">LINE_ID</string>
+    <string name="add_line_hint">請輸入LINE ID</string>
+    <string name="add_facebook_title">FACEBOOK_ID</string>
+    <string name="add_facebook_hint">請輸入FACEBOOK ID</string>
+    <string name="add_ig_title">IG_ID</string>
+    <string name="add_ig_hint">請輸入IG ID</string>
+    <string name="add_other_title">其他資訊</string>
+    <string name="add_other_hint">可以填寫內容</string>
+    <string name="add_update_button">新增</string>
+    <string-array name="blood_type">
+        <item>A</item>
+        <item>B</item>
+        <item>O</item>
+        <item>AB</item>
+    </string-array>
+    <string name="add_full_name_validate_error">需要名字</string>
+    <string name="add_update_success">更新成功</string>
+
+    <!--UploadMediaDialog-->
+    <string name="upload_media_dialog_title">選擇上傳照片或影片</string>
+    <string name="upload_media_select_picture">開啟相簿</string>
+    <string name="upload_media_take_photo">開啟相機</string>
+    <string name="upload_media_record_video">開啟錄影</string>
+    <string name="upload_media_cancel">取消</string>
+
+    <!--EditDialog-->
+    <string name="edit_dialog_record_title">活動標題</string>
+    <string name="edit_dialog_record_hint">請填寫活動內容~~</string>
+    <string name="edit_dialog_record_button">確認</string>
+
+    <!--EventNotificationReceiver-->
+    <string name="event_notification_channel_name">活動通知</string>
+    <string name="event_notification_channel_description">活動訊息</string>
+
+</resources>

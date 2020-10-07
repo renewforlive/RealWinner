@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "950673646358",
+    "firebase_url": "https://realwinner-4bccf.firebaseio.com",
+    "project_id": "realwinner-4bccf",
+    "storage_bucket": "realwinner-4bccf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950673646358:android:467d28b19672d0feafe637",
+        "android_client_info": {
+          "package_name": "com.peter.realwinner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950673646358-952nri2266h6o5f48t92irejumsu5buh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj2tJVrLH99NB__SiePZppHbKX3HS7T3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950673646358-952nri2266h6o5f48t92irejumsu5buh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dialog_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/add_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_friend_title"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/add_top_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="72dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/add_identity_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/add_head_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:contentDescription="@null"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/add_head_image_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@null"
+                    app:layout_constraintBottom_toBottomOf="@id/add_head_image"
+                    app:layout_constraintEnd_toEndOf="@id/add_head_image" />
+
+                <TextView
+                    android:id="@+id/add_full_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_full_name_title"
+                    android:textSize="18sp"
+                    android:textColor="@color/dark_gray"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintTop_toTopOf="@id/add_full_name_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/add_full_name_edit"
+                    app:layout_constraintEnd_toStartOf="@id/add_full_name_edit" />
+
+                <EditText
+                    android:id="@+id/add_full_name_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/add_full_name_hint"
+                    android:textColorHint="@color/light_gray"
+                    android:textColor="@color/dark_gray"
+                    android:importantForAutofill="no"
+                    tools:targetApi="O"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/add_nick_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_nick_name_title"
+                    android:textSize="18sp"
+                    android:textColor="@color/dark_gray"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintTop_toTopOf="@id/add_nick_name_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/add_nick_name_edit"
+                    app:layout_constraintEnd_toStartOf="@id/add_nick_name_edit" />
+
+                <EditText
+                    android:id="@+id/add_nick_name_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/add_nick_name_hint"
+                    android:textColorHint="@color/light_gray"
+                    android:textColor="@color/dark_gray"
+                    android:importantForAutofill="no"
+                    tools:targetApi="O"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/add_full_name_edit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/add_birth_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_birth_title"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/add_identity_layout"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/add_birth_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/medium_gray"
+                android:text="@string/add_birth_hint"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/add_birth_title"
+                app:layout_constraintTop_toTopOf="@id/add_birth_title"
+                app:layout_constraintBottom_toBottomOf="@id/add_birth_title"/>
+
+            <TextView
+                android:id="@+id/add_blood_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_blood_title"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/add_identity_layout"
+                app:layout_constraintEnd_toStartOf="@id/add_blood_spinner" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                style="@style/CustomSpinnerTheme"
+                android:id="@+id/add_blood_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/add_blood_title"
+                app:layout_constraintBottom_toBottomOf="@id/add_blood_title" />
+
+            <TextView
+                android:id="@+id/add_height_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_height_title"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/add_blood_title"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/add_height_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/add_height_title"
+                app:layout_constraintTop_toTopOf="@id/add_height_title"
+                app:layout_constraintBottom_toBottomOf="@id/add_height_title" />
+
+            <TextView
+                android:id="@+id/add_cellphone_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_cellphone_title"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/add_cellphone_edit"
+                app:layout_constraintBottom_toBottomOf="@id/add_cellphone_edit"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/add_cellphone_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="@string/add_cellphone_hint"
+                android:textColorHint="@color/light_gray"
+                android:textColor="@color/dark_gray"
+                android:importantForAutofill="no"
+                tools:targetApi="O"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/add_cellphone_title"
+                app:layout_constraintTop_toBottomOf="@id/add_height_title" />
+
+            <TextView
+                android:id="@+id/add_personality_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_personality_title"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/add_personality_edit"
+                app:layout_constraintBottom_toBottomOf="@id/add_personality_edit"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/add_personality_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/add_personality_hint"
+                android:textColorHint="@color/light_gray"
+                android:textColor="@color/dark_gray"
+                android:importantForAutofill="no"
+                tools:targetApi="O"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/add_personality_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_cellphone_edit" />
+
+            <TextView
+                android:id="@+id/add_hobby_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_hobby_title"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/add_hobby_edit"
+                app:layout_constraintBottom_toBottomOf="@id/add_hobby_edit"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/add_hobby_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/add_hobby_hint"
+                android:textColorHint="@color/light_gray"
+                android:textColor="@color/dark_gray"
+                android:importantForAutofill="no"
+                tools:targetApi="O"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/add_hobby_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_personality_edit" />
+
+            <TextView
+                android:id="@+id/add_line_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_line_title"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/add_line_edit"
+                app:layout_constraintBottom_toBottomOf="@id/add_line_edit"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/add_line_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/add_line_hint"
+                android:textColorHint="@color/light_gray"
+                android:textColor="@color/dark_gray"
+                android:importantForAutofill="no"
+                tools:targetApi="O"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/add_line_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_hobby_edit" />
+
+            <TextView
+                android:id="@+id/add_facebook_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_facebook_title"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/add_facebook_edit"
+                app:layout_constraintBottom_toBottomOf="@id/add_facebook_edit"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/add_facebook_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/add_facebook_hint"
+                android:textColorHint="@color/light_gray"
+                android:textColor="@color/dark_gray"
+                android:importantForAutofill="no"
+                tools:targetApi="O"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/add_facebook_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_line_edit" />
+
+            <TextView
+                android:id="@+id/add_ig_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_ig_title"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/add_ig_edit"
+                app:layout_constraintBottom_toBottomOf="@id/add_ig_edit"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/add_ig_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/add_ig_hint"
+                android:textColorHint="@color/light_gray"
+                android:textColor="@color/dark_gray"
+                android:importantForAutofill="no"
+                tools:targetApi="O"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/add_ig_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_facebook_edit" />
+
+            <TextView
+                android:id="@+id/add_other_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:text="@string/add_other_title"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/add_ig_edit"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/add_other_edit"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:inputType="text"
+                android:hint="@string/add_other_hint"
+                android:textColorHint="@color/light_gray"
+                android:textColor="@color/dark_gray"
+                android:gravity="top"
+                android:importantForAutofill="no"
+                tools:targetApi="O"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_other_title" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_update_button"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:text="@string/add_update_button"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/add_other_edit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
