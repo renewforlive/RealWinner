@@ -6,10 +6,7 @@ import androidx.paging.PagedList
 import com.peter.realwinner.model.db.dao.EventDao
 import com.peter.realwinner.model.db.entity.EventEntity
 import com.peter.realwinner.util.TimeUtil
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import org.koin.java.KoinJavaComponent.inject
 
 class EventRepository {
@@ -36,18 +33,17 @@ class EventRepository {
     }
 
     fun updateNotification(isChecked: Boolean, eventEntity: EventEntity) {
-        CoroutineScope(Dispatchers.Main).launch {
-            withContext(Dispatchers.IO) {
-                val newEntity = EventEntity (
-                    eventId = eventEntity.eventId,
-                    title = eventEntity.title,
-                    content = eventEntity.content,
-                    isNotification = if (isChecked) 1 else 0,
-                    insertTime = System.currentTimeMillis(),
-                    startTime = eventEntity.startTime
-                )
-                eventDao.updateIfExist(newEntity)
-            }
+        CoroutineScope(Job() + Dispatchers.IO).launch {
+            val newEntity = EventEntity (
+                eventId = eventEntity.eventId,
+                title = eventEntity.title,
+                content = eventEntity.content,
+                isNotification = if (isChecked) 1 else 0,
+                insertTime = System.currentTimeMillis(),
+                startTime = eventEntity.startTime
+            )
+            eventDao.updateIfExist(newEntity)
+
             if (isChecked) {
                 val time = TimeUtil.getTimestampByDate(eventEntity.startTime)
                 eventNotificationRepository.setupNotification(eventEntity.eventId, time)

@@ -11,10 +11,7 @@ import com.peter.realwinner.model.db.entity.Entitlements
 import com.peter.realwinner.model.db.entity.FriendInfoEntity
 import com.peter.realwinner.model.repository.HomeRepository
 import com.peter.realwinner.util.SharedPreferencesUtil
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import org.koin.java.KoinJavaComponent.inject
 
 class HomeViewModel : ViewModel() {
@@ -33,9 +30,7 @@ class HomeViewModel : ViewModel() {
     }
 
     fun loadAd() {
-        if (sharedPreferencesUtil.getIsAd()) {
-            showAdLiveData.value = true
-        }
+        showAdLiveData.value = true
     }
 
     fun dismissData(friendInfoEntity: FriendInfoEntity) {

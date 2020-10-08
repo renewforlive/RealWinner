@@ -7,6 +7,7 @@
 
     <!--HomeFragment-->
     <string name="home_title">我的朋友</string>
+    <string name="home_empty_text_view">別當個邊緣人!!快去新增新朋友吧!</string>
 
     <!--RecordFragment-->
     <string name="record_title">活動紀錄</string>
@@ -15,6 +16,7 @@
     <string name="item_record_time">活動時間</string>
     <string name="item_record_content">活動內容</string>
     <string name="item_record_time_content">%1$s-%2$s-%3$s</string>
+    <string name="record_empty_text_view">你的紀錄是空的~~快紀錄與朋友之間的回憶</string>
 
     <!--RecordDetailActivity-->
     <string name="record_detail_title">活動紀錄內容</string>

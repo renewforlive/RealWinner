@@ -4,7 +4,7 @@
     <item
         android:id="@+id/add_record"
         android:title="@string/record_add_title"
-        android:icon="@drawable/ic_record"
+        android:icon="@drawable/ic_record_edit"
         app:showAsAction="always" />
 
 </menu>

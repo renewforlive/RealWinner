@@ -17,8 +17,8 @@ import org.koin.java.KoinJavaComponent.inject
 class BillingRepository(private val application: Application): PurchasesUpdatedListener, BillingClientStateListener {
 
     companion object {
-        val inAppSkuList = listOf(ProductSku.CANCEL_AD)
-        val subsSkuList = listOf<String>()
+        val inAppSkuList = listOf(ProductSku.CANCEL_AD, ProductSku.TEST)
+        val subsSkuList = listOf<String>(ProductSku.CANCEL_AD, ProductSku.TEST)
         val consumableSkuList = emptyList<String>()
     }
 
@@ -103,9 +103,10 @@ class BillingRepository(private val application: Application): PurchasesUpdatedL
     }
 
     private fun querySkuDetailAsync(@BillingClient.SkuType skuType: String, skuList: List<String>) {
+        LogUtil.showInfoLog("skuType=$skuType, skuList=$skuList")
         val params = SkuDetailsParams.newBuilder().setSkusList(skuList).setType(skuType).build()
         playStoreBillingClient.querySkuDetailsAsync(params) { billingResult, skuDetailList ->
-            LogUtil.showInfoLog("billingResult=$billingResult, skuDetailList=$skuDetailList")
+            LogUtil.showInfoLog("billingResult=${billingResult.responseCode}, skuDetailList=$skuDetailList")
             when (billingResult.responseCode) {
                 BillingClient.BillingResponseCode.OK -> {
                     if (skuDetailList.orEmpty().isNotEmpty()) {
@@ -125,12 +126,12 @@ class BillingRepository(private val application: Application): PurchasesUpdatedL
     private fun queryPurchaseAsync() {
         val purchaseResult = HashSet<Purchase>()
         var result = playStoreBillingClient.queryPurchases(BillingClient.SkuType.INAPP)
-        result?.purchasesList?.apply {
+        result.purchasesList?.apply {
             purchaseResult.addAll(this)
         }
         if (isSubscriptionSupported()) {
             result = playStoreBillingClient.queryPurchases(BillingClient.SkuType.SUBS)
-            result?.purchasesList?.apply {
+            result.purchasesList?.apply {
                 purchaseResult.addAll(this)
             }
         }

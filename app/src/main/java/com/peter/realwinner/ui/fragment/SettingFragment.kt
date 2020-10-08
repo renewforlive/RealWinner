@@ -89,9 +89,6 @@ class SettingFragment : BaseFragment() {
                 Toast.makeText(this.activity, getString(R.string.setting_adv_purchase_success), Toast.LENGTH_SHORT).show()
             }
         })
-        viewModel.cancelNotificationLiveData.observe(viewLifecycleOwner, Observer {
-            Toast.makeText(this.activity, getString(R.string.setting_no_feature), Toast.LENGTH_SHORT).show()
-        })
     }
 
     private fun initListener() {

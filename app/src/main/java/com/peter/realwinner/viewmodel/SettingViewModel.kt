@@ -27,12 +27,11 @@ class SettingViewModel(application: Application) : AndroidViewModel(application)
     val versionNameLiveData = MutableLiveData<String>()
     val changeThemeLiveData = MutableLiveData<Int>()
     val cancelAdvertisingLiveData = MutableLiveData<Boolean>()
-    val cancelNotificationLiveData = MutableLiveData<Boolean>()
 
     fun loadData() : LiveData<List<SettingInfoModel>> {
         val loadDataLiveData = MutableLiveData<List<SettingInfoModel>>()
         val settingInfoList = ArrayList<SettingInfoModel>()
-        for (i in 0 until 4) {
+        for (i in 0 until 3) {
             val model = setSettingInfo(i)
             settingInfoList.add(model)
         }
@@ -49,9 +48,6 @@ class SettingViewModel(application: Application) : AndroidViewModel(application)
             }
             2 -> {
                 SettingInfoModel(order = position, title = context.getString(R.string.setting_adv_title), resourceId = R.drawable.ic_advertising)
-            }
-            3 -> {
-                SettingInfoModel(order = position, title = context.getString(R.string.setting_notification_title), resourceId = R.drawable.ic_notification)
             }
             else -> {
                 SettingInfoModel(order = position, title = String(), resourceId = 0)
@@ -79,9 +75,6 @@ class SettingViewModel(application: Application) : AndroidViewModel(application)
             }
             2 -> {
                 cancelAdvertisingLiveData.value = true
-            }
-            3 -> {
-                cancelNotificationLiveData.value = true
             }
             else -> {
 

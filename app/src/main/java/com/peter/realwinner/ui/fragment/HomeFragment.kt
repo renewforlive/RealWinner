@@ -14,7 +14,6 @@ import com.peter.realwinner.model.db.entity.FriendInfoEntity
 import com.peter.realwinner.ui.activity.FriendDetailActivity
 import com.peter.realwinner.ui.adapter.HomeAdapter
 import com.peter.realwinner.ui.callback.FriendListener
-import com.peter.realwinner.util.LogUtil
 import com.peter.realwinner.viewmodel.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -44,6 +43,7 @@ class HomeFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         setUpObserver()
         initListener()
+        loadAd()
     }
 
     private fun initView() {
@@ -54,6 +54,11 @@ class HomeFragment : BaseFragment() {
 
     private fun setUpObserver() {
         viewModel.getPagedList().observe(viewLifecycleOwner, Observer {
+            if (it.size > 0) {
+                displayEmpty(false)
+            } else {
+                displayEmpty(true)
+            }
             adapter.submitList(it)
         })
         viewModel.showAdLiveData.observe(viewLifecycleOwner, Observer {
@@ -89,6 +94,16 @@ class HomeFragment : BaseFragment() {
         val intent = Intent(context, FriendDetailActivity::class.java)
         intent.putExtra(BundleType.FRIEND_ID, friendInfoEntity.friendId)
         startActivity(intent)
+    }
+
+    private fun displayEmpty(isEmpty: Boolean) {
+        if (isEmpty) {
+            home_recycler_view.visibility = View.GONE
+            home_empty_view.visibility = View.VISIBLE
+        } else {
+            home_recycler_view.visibility = View.VISIBLE
+            home_empty_view.visibility = View.GONE
+        }
     }
 
 }

@@ -33,7 +33,6 @@ class EventViewModel : ViewModel() {
     }
 
     fun getCurrentTime() : String {
-        LogUtil.showInfoLog("currentTime=$currentTime")
         return currentTime
     }
 

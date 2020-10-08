@@ -13,6 +13,7 @@ import com.peter.realwinner.model.db.entity.RecordEntity
 import com.peter.realwinner.ui.activity.RecordDetailActivity
 import com.peter.realwinner.ui.adapter.RecordAdapter
 import com.peter.realwinner.viewmodel.RecordViewModel
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_record.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.java.KoinJavaComponent.inject
@@ -75,7 +76,22 @@ class RecordFragment : BaseFragment() {
 
     private fun setUpObserver() {
         viewModel.getPagedList().observe(viewLifecycleOwner, Observer {
+            if (it.size > 0) {
+                displayEmpty(false)
+            } else {
+                displayEmpty(true)
+            }
             adapter.submitList(it)
         })
+    }
+
+    private fun displayEmpty(isEmpty: Boolean) {
+        if (isEmpty) {
+            record_recycler_view.visibility = View.GONE
+            record_empty_view.visibility = View.VISIBLE
+        } else {
+            record_recycler_view.visibility = View.VISIBLE
+            record_empty_view.visibility = View.GONE
+        }
     }
 }
